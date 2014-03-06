@@ -100,7 +100,7 @@ namespace Rhino.PersistentHashTable
 			{
 				instance.WithDatabase(database, (session, dbid) =>
 				{
-					using (var details = new Table(session, dbid, "details", OpenTableGrbit.ReadOnly))
+					using (var details = new Table(session, dbid, "details", OpenTableGrbit.None))
 					{
 						Api.JetMove(session, details, JET_Move.First, MoveGrbit.None);
 						var columnids = Api.GetColumnDictionary(session, details);
